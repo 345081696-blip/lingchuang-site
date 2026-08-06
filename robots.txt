@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /index.html
+Allow: /services.html
+Allow: /about.html
+Allow: /tech.html
+Allow: /contact.html
+Disallow: /assets/
+Sitemap: https://lingchuang.ai/sitemap.xml
