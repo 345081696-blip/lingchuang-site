@@ -323,3 +323,17 @@ h1,h2,h3,h4,.sans{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hi
 .pop .pt:after{content:"悬浮查看 ›";font-size:12px;font-weight:600;color:var(--accent);margin-left:10px;letter-spacing:.5px;font-family:sans-serif}
 .pop .pop-body{position:absolute;top:calc(100% + 10px);left:0;right:0;z-index:60;background:var(--card);border:1px solid rgba(79,168,155,.4);border-radius:14px;padding:16px 18px;box-shadow:0 16px 40px rgba(0,0,0,.45);color:var(--ink);font-size:15px;line-height:1.8;display:none}
 .pop:hover .pop-body,.pop:focus-within .pop-body,.pop.open .pop-body{display:block}
+
+/* 下载页安装说明折叠块 */
+details.howto{margin:26px auto 0;max-width:860px;background:var(--card);border:1px solid rgba(79,168,155,.35);border-radius:14px;text-align:left}
+details.howto summary{cursor:pointer;padding:16px 20px;font-weight:700;color:var(--accent);font-size:15px;list-style:none;line-height:1.6}
+details.howto summary::-webkit-details-marker{display:none}
+details.howto summary:before{content:"▶ ";font-size:11px;display:inline-block;margin-right:2px;transition:transform .15s}
+details.howto[open] summary:before{transform:rotate(90deg)}
+details.howto .howto-body{padding:2px 20px 18px;color:var(--muted);font-size:14px;line-height:1.85}
+details.howto .howto-body>p{margin-bottom:8px}
+details.howto .hw{margin-top:12px;padding:12px 16px;background:var(--soft);border-radius:10px;border-left:3px solid var(--accent)}
+details.howto .hw b{color:var(--ink);display:block;margin-bottom:4px;font-size:14px}
+details.howto .hw p{margin:4px 0;color:var(--muted);font-size:13.5px;line-height:1.8}
+details.howto .howto-note{margin-top:14px;color:var(--muted);font-size:13px}
+details.howto .howto-note b{color:var(--ink)}
