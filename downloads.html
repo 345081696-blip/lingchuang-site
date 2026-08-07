@@ -38,7 +38,7 @@
         <div class="en">Smart Transcribe · v0.2.28</div>
         <p style="color:var(--muted);font-size:14px;line-height:1.8">本机录屏、音视频转写，云端 / 本地智能整理，导出文档。只支持 Apple Silicon Mac（M 系列芯片）。Windows 版开发中。</p>
         <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn btn-gold" href="https://github.com/345081696-blip/zero-create-ai-smart-transcribe-downloads/releases/download/v0.2.28/ZeroCreateAI-SmartTranscribe-0.2.28-arm64.dmg">下载 Mac 版（Apple Silicon）</a>
+          <button type="button" class="btn btn-gold dl-btn" data-url="https://github.com/345081696-blip/zero-create-ai-smart-transcribe-downloads/releases/download/v0.2.28/ZeroCreateAI-SmartTranscribe-0.2.28-arm64.dmg">下载 Mac 版（Apple Silicon）</button>
           <a class="btn btn-line" href="https://github.com/345081696-blip/zero-create-ai-smart-transcribe-downloads/releases" target="_blank" rel="noopener">查看发布记录</a>
         </div>
         <p style="color:var(--muted);font-size:12.5px;margin-top:14px">安装包大小约 190MB · 需要 macOS 13 或更新</p>
@@ -49,9 +49,9 @@
         <div class="en">AI Toolkit Installer · v0.1.0</div>
         <p style="color:var(--muted);font-size:14px;line-height:1.8">检测环境、修复依赖，一键安装配置 Codex、Claude Code、OpenClaw、Hermes，四款 AI 工具共用一个 API Key。面向不熟悉电脑操作的用户。</p>
         <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn btn-gold" href="https://github.com/345081696-blip/zero-ai-toolkit-installer-downloads/releases/download/v0.1.0/zero-ai-toolkit-v0.1.0-macos-arm64.dmg">下载 macOS（Apple Silicon）</a>
-          <a class="btn btn-line" href="https://github.com/345081696-blip/zero-ai-toolkit-installer-downloads/releases/download/v0.1.0/zero-ai-toolkit-v0.1.0-macos-x64.dmg">macOS（Intel）</a>
-          <a class="btn btn-line" href="https://github.com/345081696-blip/zero-ai-toolkit-installer-downloads/releases/download/v0.1.0/zero-ai-toolkit-v0.1.0-windows-x64.zip">Windows x64</a>
+          <button type="button" class="btn btn-gold dl-btn" data-url="https://github.com/345081696-blip/zero-ai-toolkit-installer-downloads/releases/download/v0.1.0/zero-ai-toolkit-v0.1.0-macos-arm64.dmg">下载 macOS（Apple Silicon）</button>
+          <button type="button" class="btn btn-line dl-btn" data-url="https://github.com/345081696-blip/zero-ai-toolkit-installer-downloads/releases/download/v0.1.0/zero-ai-toolkit-v0.1.0-macos-x64.dmg">macOS（Intel）</button>
+          <button type="button" class="btn btn-line dl-btn" data-url="https://github.com/345081696-blip/zero-ai-toolkit-installer-downloads/releases/download/v0.1.0/zero-ai-toolkit-v0.1.0-windows-x64.zip">Windows x64</button>
         </div>
         <p style="color:var(--muted);font-size:12.5px;margin-top:14px">安装时需联网下载工具主体（约 700MB）· 支持 macOS 10.15+ / Windows 10/11 x64</p>
       </div>
@@ -70,25 +70,6 @@
     </div>
     </div>
 
-    <div class="container" style="max-width:860px">
-    <details class="howto">
-      <summary>安装时提示「无法验证开发者 / Windows 已保护你的电脑」？看这里 →</summary>
-      <div class="howto-body">
-        <p>这两个工具暂时还没有官方签名（付费证书），系统会弹一次安全警告。<b>不是病毒</b>，按下面两步放行就能装。</p>
-        <div class="hw">
-          <b>macOS（Mac 电脑）</b>
-          <p>① 双击安装包若提示「无法验证开发者」：<b>在安装包上点右键 → 打开 → 仍要打开</b>。</p>
-          <p>② 或者：打开 <b>系统设置 → 隐私与安全性</b> → 往下滚动找到 <b>「仍要打开」</b> 按钮 → 点击。</p>
-        </div>
-        <div class="hw">
-          <b>Windows（电脑）</b>
-          <p>① 双击安装包若提示「Windows 已保护你的电脑」：点 <b>「更多信息」</b> → 再点 <b>「仍要运行」</b>。</p>
-        </div>
-        <p class="howto-note">只第一次装会提示，放行一次以后都正常。还是装不上？加微信 <b>lgl345081696</b> 备注「工具」，我们远程帮你弄。</p>
-      </div>
-    </details>
-    </div>
-
   </div>
 </section>
 
@@ -97,5 +78,74 @@
   <p>内容以实际合作方案为准</p>
   <p class="foot-en">LingChuang AI · Enterprise AI Landing Service</p>
 </footer>
+
+<!-- 下载前说明模态 -->
+<div class="modal-mask" id="dlMask">
+  <div class="modal dl-modal" role="dialog" aria-modal="true" aria-label="下载前说明">
+    <div class="x" id="dlClose">×</div>
+    <h3>下载前先看 30 秒<br>装的时候系统会弹警告，这么做就行</h3>
+    <div class="en">Don't be scared off by the pop-up</div>
+
+    <div class="dl-sec">
+      <b>为什么会弹警告？</b>
+      <p>这两个工具暂时还没买官方签名证书（那是每年要花钱的，现在工具免费送，先省着）。Mac 和 Windows 系统见到没签名的软件，都会<em>例行弹一次安全确认</em>——这是系统对"新软件"的正常拦截，<b>不是软件有问题，更不是病毒</b>。零创自己天天在用，放心。</p>
+    </div>
+
+    <div class="dl-sec os">
+      <b>🍎 Mac 电脑会看到什么？</b>
+      <p>双击安装包时，系统可能提示：<span class="warn">「macOS 无法验证开发者」</span></p>
+      <p>这么做（选一种）：</p>
+      <p>① 最稳：在安装包上 <b>点右键 → 打开 → 仍要打开</b>。</p>
+      <p>② 或者：<b>系统设置 → 隐私与安全性</b> → 往下找到 <b>「仍要打开」</b> → 点它 → 输密码确认。</p>
+      <p class="tip">放行一次，以后打开就正常了。</p>
+    </div>
+
+    <div class="dl-sec os">
+      <b>🪟 Windows 电脑会看到什么？</b>
+      <p>双击安装包时，屏幕可能提示：<span class="warn">「Windows 已保护你的电脑」</span></p>
+      <p>这么做：点 <b>「更多信息」</b> → 再点 <b>「仍要运行」</b> → 就装上了。</p>
+      <p class="tip">如果浏览器下载时也弹「保留 / 不保留」，点 <b>保留</b> 继续。</p>
+    </div>
+
+    <div class="dl-sec">
+      <b>装完第一次打开，可能还会问一次</b>
+      <p>跟上面一样的道理，同样放行一次就行，以后每次打开都正常，不会一直问。</p>
+    </div>
+
+    <div class="dl-sec help">
+      <b>还是搞不定？</b>
+      <p>加微信 <b>lgl345081696</b> 备注「工具」，我们远程帮你装；也可以直接找 <a href="contact.html" style="color:var(--accent);font-weight:600">我们</a>。别让一个弹窗拦住一个好工具。</p>
+    </div>
+
+    <div class="dl-actions">
+      <button type="button" class="btn btn-gold" id="dlGo">我明白了，开始下载</button>
+      <button type="button" class="btn btn-line" id="dlCancel">先不装了</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var mask=document.getElementById('dlMask'),go=document.getElementById('dlGo'),cancel=document.getElementById('dlCancel'),close=document.getElementById('dlClose');
+  var targetUrl='';
+  var btns=document.querySelectorAll('.dl-btn');
+  for(var i=0;i<btns.length;i++){
+    btns[i].addEventListener('click',function(e){
+      e.preventDefault();
+      targetUrl=this.getAttribute('data-url')||'';
+      mask.classList.add('open');
+    });
+  }
+  function hide(){mask.classList.remove('open');}
+  go.addEventListener('click',function(){
+    if(targetUrl){ window.location.href=targetUrl; }
+    hide();
+  });
+  cancel.addEventListener('click',hide);
+  close.addEventListener('click',hide);
+  mask.addEventListener('click',function(e){ if(e.target===mask){hide();} });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'){hide();} });
+})();
+</script>
 </body>
 </html>
